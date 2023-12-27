@@ -19,25 +19,6 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(countNumber);
 
-//error
-    if (ref.watch(countNumber) == 5) {
-      showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: const Text("Halfway point"),
-              content: Text("Number: ${ref.watch(countNumber)}"),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text("close"))
-              ],
-            );
-          });
-    }
-
     ref.listen(countNumber, (_, next) {
       if (next >= 10) {
         showDialog(
