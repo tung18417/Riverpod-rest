@@ -19,6 +19,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(countNumber);
 
+//error
     if (ref.watch(countNumber) == 5) {
       showDialog(
           context: context,
